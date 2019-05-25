@@ -10,7 +10,8 @@ var wikiRouter = require('./routes/wiki')
 var catalogRouter = require('./routes/catalog')
 
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://dbUser:dbUserPassword@cluster0-ecmwe.mongodb.net/local_library?retryWrites=true';
+var dev_db_url = 'mongodb+srv://dbUser:dbUserPassword@cluster0-ecmwe.mongodb.net/local_library?retryWrites=true';
+var mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 var app = express();
 
